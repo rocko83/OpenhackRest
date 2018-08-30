@@ -5,9 +5,9 @@ from mcrcon import MCRcon
 def index(request):
     return render(request, 'index.html', {'data':'damato'})
 def myncraft(request, myncraft):
-    with MCRcon(os.environ['40.121.105.84'], os.environ['cheesesteakjimmys']) as mcr:
+    with MCRcon(os.environ['myncraft'], os.environ['cheesesteakjimmys']) as mcr:
         resp = mcr.command("/list")
-        return  render (request, 'index.html', { 'data':'data'})
+        return  render (request, 'index.html', { 'data':resp})
 
 
 
